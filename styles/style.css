@@ -1,0 +1,180 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    word-break: break-all;
+}
+body{
+    background-color: rgb(199, 199, 199);
+}
+
+#container{
+    width: 80%;
+    padding: .7em;
+    min-height: 5em;
+    background-color: rgba(0,0,0,.2);
+    box-shadow: 1px 1px 3px 2px rgba(0,0,0,.6);
+    margin: auto;
+    margin-top: 1em;
+}
+#container .tasks{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    gap: 1em;
+}
+#container .tasks .postitTasks{
+    border-radius: 1em;
+    padding: .5em;
+}
+#container .tasks .postitTasks:nth-child(1){
+    background-color: rgba(239, 255, 11, .3);
+}
+#container .tasks .postitTasks:nth-child(2){
+    background-color: rgba(11, 68, 255, .3);
+}
+#container .tasks .postitTasks:nth-child(3){
+    background-color: rgba(11, 255, 64, .3);
+}
+#container .tasks .postitTasks h1{
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+#container .tasks .postitTasks .btnAdd{
+    display: flex;
+    justify-content: end;
+}
+#container .tasks .postitTasks .btnAdd button{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+}
+#container .tasks .postitTasks .btnAdd button:hover{
+    background-color: aquamarine;
+    color: #fff;
+}
+#container .tasks .postitTasks .contentTask{
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+    min-height: 30%;
+    margin: 1em 0 1em 0;
+    padding: 1em;
+}
+#container .tasks .postitTasks .contentTask .task{
+    border: .1em solid rgba(255,255,255,.3);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding: .4em;
+    border-radius: .5em;
+}
+#container .tasks .postitTasks .checkTask button, #container .tasks .postitTasks .delEditTask button {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: .3em;
+    border: none;
+    font-family: serif;
+    cursor: pointer;
+    transition: .2s;
+}
+#container .tasks .postitTasks .contentTask .task p{
+    font-size: 1.3em;
+    font-family: serif;
+    color: #fff;
+}
+#container .tasks .postitTasks .checkTask button{
+    border: 1px solid aqua;
+}
+#container .tasks .postitTasks .delEditTask .editTask{
+    border: 1px solid rgb(115, 136, 255);
+}
+#container .tasks .postitTasks .delEditTask .deleteTask{
+    border: 1px solid rgb(255, 8, 0);
+}
+
+#container .tasks .postitTasks .checkTask button:hover{
+    background-color:rgb(0, 150, 150);
+    color: #fff;
+}
+#container .tasks .postitTasks .delEditTask .editTask:hover{
+    background-color:rgb(38, 77, 207);
+    color: #fff;
+}
+#container .tasks .postitTasks .delEditTask .deleteTask:hover{
+    background-color:rgb(177, 6, 0);
+    color: #fff;
+}
+
+.divForm{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.6);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addTaskForm {
+    display: flex;
+    width: 60%;
+}
+.addTaskForm input[type='text']::placeholder {
+    color: #fff;
+}
+.addTaskForm input[type='text'] {
+    margin-right: 1em;
+    color: #fff;
+    padding: .3em;
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+.addTaskForm input[type='submit'] {
+    padding: .5em;
+    width: 7em;
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #fff;
+    border-radius: .4em;
+    cursor: pointer;
+    transition: .2s;
+}
+.addTaskForm input[type='submit']:hover {
+    border-color: #fff;
+    color: #000;
+}
+.hideForm{
+    display: none;
+}
+.taskConclude{
+    text-decoration: line-through;
+}
+.opacityCard {
+    opacity: 0.4;
+}
+.cursorMove {
+    cursor: move;
+}
+@media (max-width: 700px) {
+    #container {
+        font-size: .7em;
+    }
+    #container .tasks{
+        grid-template: 1fr 1fr 1fr / 1fr;
+    }
+    .addTaskForm{
+        width: 90%;
+    }
+}
