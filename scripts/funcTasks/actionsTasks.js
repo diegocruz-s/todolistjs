@@ -52,8 +52,12 @@ class ActionsTasks {
         this.events();
     }
 
-    createTask(){
+    createTask(block){
+        console.log(block)
         let textTask = document.querySelector('.taskText');
+        if(!textTask.value){
+            return
+        }
 
         const objTask = {
             id: this.randomId(),
@@ -61,6 +65,16 @@ class ActionsTasks {
             blockDefault: true,
             blockProgress: false,
             blockDone: false
+        }
+
+        if(block === 'progress'){
+            objTask.blockDefault = false;
+            objTask.blockDone = false;
+            objTask.blockProgress = true;
+        }else if (block === 'done'){
+            objTask.blockDefault = false;
+            objTask.blockDone = true;
+            objTask.blockProgress = false;
         }
 
         textTask.value = '';
